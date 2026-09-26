@@ -1,0 +1,275 @@
+# Annotated with Bakta
+# Software: v1.12.1
+# Database: v6.0, light
+# DOI: 10.1099/mgen.0.000685
+# URL: github.com/oschwengers/bakta
+#Sequence Id	Type	Start	Stop	Strand	Locus Tag	Gene	Product	DbXrefs
+contig_1	cds	3	596	+	GLGIAI_0001		(5' truncated) hypothetical protein	
+contig_1	cds	643	1575	+	GLGIAI_0002		Neck protein gp13	SO:0001217, UniRef:UniRef50_P11110
+contig_1	cds	1629	2444	+	GLGIAI_0003		hypothetical protein	PFAM:PF07460.16, PFAM:PF19835.5, PFAM:PF20987.3
+contig_1	cds	2481	3221	+	GLGIAI_0004		Neck protein gp14	SO:0001217, UniRef:UniRef50_P11111
+contig_1	cds	3248	4081	+	GLGIAI_0005		Tail completion protein gp15	SO:0001217, UniRef:UniRef50_P11112
+contig_1	cds	4095	4592	+	GLGIAI_0006		Terminase, small subunit	SO:0001217, UniRef:UniRef50_P17311
+contig_1	cds	4589	7405	+	GLGIAI_0007		hypothetical protein	PFAM:PF14528.11, PFAM:PF17289.8
+contig_1	cds	7440	9440	+	GLGIAI_0008		Tail sheath protein	SO:0001217, UniRef:UniRef50_P13332
+contig_1	cds	9514	10008	+	GLGIAI_0009		Tail tube protein gp19	SO:0001217, UniRef:UniRef50_P13333
+contig_1	cds	10067	11632	+	GLGIAI_0010		Portal protein	SO:0001217, UniRef:UniRef50_P13334
+contig_1	cds	11633	11872	+	GLGIAI_0011		hypothetical protein	
+contig_1	cds	11885	12292	+	GLGIAI_0012		Prohead core protein	SO:0001217, UniRef:UniRef50_Q6U9E4
+contig_1	cds	12304	12999	+	GLGIAI_0013		Gp21 prohead core scaffold protein and protease	SO:0001217, UniRef:UniRef50_Q7Y445
+contig_1	cds	13031	13825	+	GLGIAI_0014		Capsid assembly scaffolding protein	SO:0001217, UniRef:UniRef50_P04534
+contig_1	cds	13885	15471	+	GLGIAI_0015		Major capsid protein	SO:0001217, UniRef:UniRef50_P04535
+contig_1	cds	15788	15925	+	GLGIAI_0016		hypothetical protein	SO:0001217, UniRef:UniRef50_A7XFC2
+contig_1	cds	15958	16110	+	GLGIAI_0017		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3M7
+contig_1	cds	16194	17435	+	GLGIAI_0018		Capsid vertex protein	SO:0001217, UniRef:UniRef50_Q76XH4
+contig_1	cds	17436	18023	-	GLGIAI_0019		DNA recombination-mediator protein A	SO:0001217, UniRef:UniRef50_A0A6B9X3M6
+contig_1	cds	18437	18874	-	GLGIAI_0020		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3M5
+contig_1	cds	18921	19196	-	GLGIAI_0021		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y443
+contig_1	cds	19196	19393	-	GLGIAI_0022		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYZ0
+contig_1	cds	19594	20796	-	GLGIAI_0023		Ig-like domain-containing protein	SO:0001217, UniRef:UniRef50_A0A482GCM3
+contig_1	cds	20892	21056	-	GLGIAI_0024		hypothetical protein	
+contig_1	cds	21135	21860	-	GLGIAI_0025		Inhibitor of prohead protease	SO:0001217, UniRef:UniRef50_Q76XH3
+contig_1	cds	21931	23433	+	GLGIAI_0026	uvsW	ATP-dependent DNA helicase uvsW	SO:0001217, UniRef:UniRef50_P0DXF1
+contig_1	cds	23477	23713	+	GLGIAI_0027		UvsW-1 domain-containing protein	SO:0001217, UniRef:UniRef50_Q7Y441
+contig_1	cds	23777	23953	-	GLGIAI_0028		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y440
+contig_1	cds	23974	24381	-	GLGIAI_0029	uvsY	UvsY	SO:0001217, UniRef:UniRef50_Q76XH1
+contig_1	cds	24429	24815	-	GLGIAI_0030		Baseplate wedge protein gp25	SO:0001217, UniRef:UniRef50_P09425
+contig_1	cds	24824	25453	-	GLGIAI_0031		hypothetical protein	
+contig_1	cds	25524	26294	+	GLGIAI_0032		Baseplate hub assembly catalyst	SO:0001217, UniRef:UniRef50_A0AAF1K733
+contig_1	cds	26272	27381	+	GLGIAI_0033		Gp27 baseplate hub subunit	SO:0001217, UniRef:UniRef50_Q7Y438
+contig_1	cds	27381	27899	+	GLGIAI_0034		Gp28 baseplate hub distal subunit	SO:0001217, UniRef:UniRef50_Q7Y437
+contig_1	cds	27896	29629	+	GLGIAI_0035		Tail length regulator	SO:0001217, UniRef:UniRef50_A0AAF1K6R5
+contig_1	cds	29629	30687	+	GLGIAI_0036		Baseplate tail-tube junction protein gp48	SO:0001217, UniRef:UniRef50_P13339
+contig_1	cds	30687	31619	+	GLGIAI_0037		Baseplate tail-tube junction protein gp54	SO:0001217, UniRef:UniRef50_P13341
+contig_1	cds	31653	32138	-	GLGIAI_0038		hypothetical protein	
+contig_1	cds	32135	32959	-	GLGIAI_0039		ADP ribosyltransferase domain-containing protein	SO:0001217, UniRef:UniRef50_C4MZ08
+contig_1	cds	33039	35090	-	GLGIAI_0040		NAD(+)--arginine ADP-ribosyltransferase	SO:0001217, UniRef:UniRef50_C4MZ09
+contig_1	cds	35158	35370	-	GLGIAI_0041		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3M1
+contig_1	cds	35442	35621	-	GLGIAI_0042		hypothetical protein	
+contig_1	cds	35690	36208	-	GLGIAI_0043		GmrSD restriction endonucleases N-terminal domain-containing protein	SO:0001217, UniRef:UniRef50_A0A0B7ML84
+contig_1	cds	36210	36539	-	GLGIAI_0044		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MS38
+contig_1	cds	36539	37210	-	GLGIAI_0045		DNA-cytosine methylase	SO:0001217, UniRef:UniRef50_A0A1X7QGM8
+contig_1	cds	37494	37745	-	GLGIAI_0046		hypothetical protein	SO:0001217, UniRef:UniRef50_A7XFF9
+contig_1	cds	37829	37996	-	GLGIAI_0047		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3L5
+contig_1	cds	38073	38354	-	GLGIAI_0048		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3L3
+contig_1	cds	38425	38694	-	GLGIAI_0049		Phage protein	SO:0001217, UniRef:UniRef50_A0A514DKT7
+contig_1	cds	38821	39129	-	GLGIAI_0050		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3K9
+contig_1	cds	39179	39466	-	GLGIAI_0051		Phage protein	SO:0001217, UniRef:UniRef50_A0A0B7MJE2
+contig_1	cds	39550	39828	-	GLGIAI_0052		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A6B9X317
+contig_1	cds	39833	40153	-	GLGIAI_0053		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3K6
+contig_1	cds	40155	40385	-	GLGIAI_0054		Modifier of suppressor tRNAs	SO:0001217, UniRef:UniRef50_A0A0B7MSZ4
+contig_1	cds	40577	40855	-	GLGIAI_0055		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MJE4
+contig_1	cds	40868	41047	-	GLGIAI_0056		LSM domain-containing protein	SO:0001217, UniRef:UniRef50_A0A7S6HT30
+contig_1	cds	41112	41279	-	GLGIAI_0057		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3L5
+contig_1	cds	41350	41646	-	GLGIAI_0058		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MSZ8
+contig_1	cds	41662	41823	-	GLGIAI_0059		hypothetical protein	
+contig_1	cds	41881	42213	-	GLGIAI_0060		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3J8
+contig_1	cds	42231	42446	-	GLGIAI_0061		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A6B9X326
+contig_1	cds	42488	42964	-	GLGIAI_0062		HNH endonuclease	SO:0001217, UniRef:UniRef50_A7XFH9
+contig_1	cds	42957	44453	-	GLGIAI_0063		DNA ligase	SO:0001217, UniRef:UniRef50_Q76XG6
+contig_1	cds	44440	44919	-	GLGIAI_0064		Gp30-3	SO:0001217, UniRef:UniRef50_Q859C7
+contig_1	cds	44909	45073	-	GLGIAI_0065		Gp31-1	SO:0001217, UniRef:UniRef50_Q859C8
+contig_1	cds	45157	45480	-	GLGIAI_0066		Head assembly cochaperone with GroEL	SO:0001217, UniRef:UniRef50_A0A482GCZ3
+contig_1	cds	45521	45835	-	GLGIAI_0067		Tail fibers protein	SO:0001217, UniRef:UniRef50_A0A0B7MT07
+contig_1	cds	45828	46334	-	GLGIAI_0068		Deoxycytidylate deaminase	SO:0001217, UniRef:UniRef50_A0AAF1KLK0
+contig_1	cds	46356	46559	-	GLGIAI_0069		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y433
+contig_1	cds	46559	47437	-	GLGIAI_0070		Polynucleotide kinase	SO:0001217, UniRef:UniRef50_A0AAF1K7U3
+contig_1	cds	47437	47889	-	GLGIAI_0071		O-spanin	SO:0001217, UniRef:UniRef50_A0A0B7MS59
+contig_1	cds	47886	48152	-	GLGIAI_0072		Spanin Rz	SO:0001217, UniRef:UniRef50_A0A0B7MT09
+contig_1	cds	48254	49372	-	GLGIAI_0073		RNA ligase 1	SO:0001217, UniRef:UniRef50_A0A0B7MRQ3
+contig_1	cds	49359	49820	-	GLGIAI_0074		GIY-YIG domain-containing protein	SO:0001217, UniRef:UniRef50_A0A6B9X4H8
+contig_1	cds	49871	50269	-	GLGIAI_0075		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MZ50
+contig_1	cds	50340	50489	-	GLGIAI_0076		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A6B9X1N8
+contig_1	cds	50557	50775	-	GLGIAI_0077		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3J1
+contig_1	cds	50845	51063	-	GLGIAI_0078		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MZ52
+contig_1	cds	51164	51640	-	GLGIAI_0079		Polynucleotide kinase/phosphatase	SO:0001217, UniRef:UniRef50_A0A0B7MJG0
+contig_1	cds	51637	52797	-	GLGIAI_0080		Ribonucleoside-diphosphate reductase subunit beta	SO:0001217, UniRef:UniRef50_P11156
+contig_1	cds	52813	52980	-	GLGIAI_0081		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3I8
+contig_1	cds	52980	53153	-	GLGIAI_0082		Phage protein	SO:0001217, UniRef:UniRef50_Q7Y3I7
+contig_1	cds	53153	53320	-	GLGIAI_0083		Phage protein	SO:0001217, UniRef:UniRef50_A0A0B7MRQ9
+contig_1	cds	53389	55632	-	GLGIAI_0084		Ribonucleoside-diphosphate reductase subunit alpha	SO:0001217, UniRef:UniRef50_P32282
+contig_1	cds	55644	55946	-	GLGIAI_0085		hypothetical protein	
+contig_1	cds	55983	57215	-	GLGIAI_0086		thymidylate synthase	SO:0001217, UniRef:UniRef50_Q7Y427
+contig_1	cds	57187	57456	-	GLGIAI_0087		Tail fiber assembly protein	SO:0001217, UniRef:UniRef50_A0A6B9X1P7
+contig_1	cds	57550	58119	-	GLGIAI_0088		dihydrofolate reductase	SO:0001217, UniRef:UniRef50_C4MZ60
+contig_1	cds	58135	58464	-	GLGIAI_0089		WYL domain-containing protein	SO:0001217, UniRef:UniRef50_Q7Y3I4
+contig_1	cds	58520	58849	-	GLGIAI_0090		Clamp loader small subunit	SO:0001217, UniRef:UniRef50_A0A482GLC5
+contig_1	cds	58969	59943	-	GLGIAI_0091		Single-stranded DNA-binding protein	SO:0001217, UniRef:UniRef50_P03695
+contig_1	cds	60004	60600	-	GLGIAI_0092		HNH nuclease domain-containing protein	SO:0001217, UniRef:UniRef50_A0A6B9WZ30
+contig_1	cds	60587	61264	-	GLGIAI_0093		DNA helicase loader	SO:0001217, UniRef:UniRef50_A0A482GA75
+contig_1	cds	61274	61528	-	GLGIAI_0094		Late transcription coactivator	SO:0001217, UniRef:UniRef50_Q76XF7
+contig_1	cds	61521	61796	-	GLGIAI_0095		Double-stranded DNA binding protein	SO:0001217, UniRef:UniRef50_A0A1V0DY12
+contig_1	cds	61801	62397	-	GLGIAI_0096		CYTH domain-containing protein	SO:0001217, UniRef:UniRef50_A7XFL5
+contig_1	cds	62408	63355	-	GLGIAI_0097		Ribonuclease H	SO:0001217, UniRef:UniRef50_J7HY67
+contig_1	cds	63358	63543	-	GLGIAI_0098		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3I2
+contig_1	cds	63618	67358	+	GLGIAI_0099		Long tail fiber proximal subunit	SO:0001217, UniRef:UniRef50_A0AAF1K0G4
+contig_1	cds	67392	68531	+	GLGIAI_0100		Hinge long tail fiber protein proximal connector	SO:0001217, UniRef:UniRef50_Q7Y418
+contig_1	cds	68734	70224	+	GLGIAI_0101		Hinge connector of long tail fiber distal connector	SO:0001217, UniRef:UniRef50_A0AAF1KQK0
+contig_1	cds	70295	73063	+	GLGIAI_0102		Long tail fiber protein Gp37	SO:0001217, UniRef:UniRef50_A0A6B9LQF4
+contig_1	cds	73104	73343	+	GLGIAI_0103		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3I1
+contig_1	cds	73377	74033	+	GLGIAI_0104		Holin	SO:0001217, UniRef:UniRef50_A0AAF1K0W6
+contig_1	cds	74069	74317	-	GLGIAI_0105		Phage protein	SO:0001217, UniRef:UniRef50_Q7Y3I0
+contig_1	cds	74314	74625	-	GLGIAI_0106		hypothetical protein	
+contig_1	cds	74650	74982	-	GLGIAI_0107		Phage protein	SO:0001217, UniRef:UniRef50_Q7Y3G4
+contig_1	cds	74991	75359	-	GLGIAI_0108		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3G5
+contig_1	cds	75370	75561	-	GLGIAI_0109		Phage protein	SO:0001217, UniRef:UniRef50_A0A220NUC6
+contig_1	cds	75585	75863	-	GLGIAI_0110		hypothetical protein	
+contig_1	cds	75875	76633	-	GLGIAI_0111		Lysozyme inhibitor LprI-like N-terminal domain-containing protein	SO:0001217, UniRef:UniRef50_A0A482MKU7
+contig_1	cds	76704	76859	-	GLGIAI_0112		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A6B9X7L9
+contig_1	cds	76929	77141	-	GLGIAI_0113		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3H7
+contig_1	cds	77211	77453	-	GLGIAI_0114		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MRT0
+contig_1	cds	77517	77717	-	GLGIAI_0115		Lipoprotein	SO:0001217, UniRef:UniRef50_A0AA51SN52
+contig_1	cds	77889	78161	-	GLGIAI_0116		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3G8
+contig_1	cds	78228	78434	-	GLGIAI_0117		hypothetical protein	
+contig_1	cds	78546	78941	-	GLGIAI_0118		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3G9
+contig_1	cds	78945	79142	-	GLGIAI_0119		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3H5
+contig_1	cds	79145	80509	-	GLGIAI_0120		DNA topoisomerase medium subunit	SO:0001217, UniRef:UniRef50_P07065
+contig_1	cds	80517	80879	-	GLGIAI_0121		Caveolin	SO:0001217, UniRef:UniRef50_A7XFP5
+contig_1	cds	80882	81175	-	GLGIAI_0122		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3H3
+contig_1	cds	81221	81538	-	GLGIAI_0123		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3H2
+contig_1	cds	81553	82545	-	GLGIAI_0124		RIIB protector from prophage-induced early lysis	SO:0001217, UniRef:UniRef50_A0AAF1KAQ6
+contig_1	cds	82607	82738	-	GLGIAI_0125		HTH psq-type domain-containing protein	SO:0001217, UniRef:UniRef50_A0A6B9X7M6
+contig_1	cds	82750	84858	-	GLGIAI_0126		RIIA lysis inhibitor	SO:0001217, UniRef:UniRef50_A0A9P0VDD1
+contig_1	cds	84873	85130	-	GLGIAI_0127		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3U7
+contig_1	cds	85141	85335	-	GLGIAI_0128		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3U6
+contig_1	cds	85328	85522	-	GLGIAI_0129		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3U5
+contig_1	cds	85589	85924	-	GLGIAI_0130		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A7S6L105
+contig_1	cds	85957	87780	-	GLGIAI_0131		hypothetical protein	PFAM:PF00204.31, PFAM:PF02518.31
+contig_1	cds	87880	88053	-	GLGIAI_0132		hypothetical protein	PFAM:PF09723.15
+contig_1	cds	88055	88723	-	GLGIAI_0133		Exodeoxyribonuclease	SO:0001217, UniRef:UniRef50_A0AAF1JZD8
+contig_1	cds	88725	88967	-	GLGIAI_0134		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MSF7
+contig_1	cds	88998	89144	-	GLGIAI_0135		hypothetical protein	
+contig_1	cds	89146	89313	-	GLGIAI_0136		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MIY4
+contig_1	cds	89324	90715	-	GLGIAI_0137		ATP-dependent DNA helicase	SO:0001217, UniRef:UniRef50_A0AAF1JZW9
+contig_1	cds	90715	91029	-	GLGIAI_0138		DUF1508 domain-containing protein	SO:0001217, UniRef:UniRef50_Q7Y3U1
+contig_1	cds	91029	91784	-	GLGIAI_0139		Anti-sigma factor	SO:0001217, UniRef:UniRef50_A0A482GMH0
+contig_1	cds	91846	92349	-	GLGIAI_0140		ADP-ribosylase	SO:0001217, UniRef:UniRef50_A0A482GBC4
+contig_1	cds	92419	92937	-	GLGIAI_0141		dCTP pyrophosphatase	SO:0001217, UniRef:UniRef50_Q94MV8
+contig_1	cds	92952	93980	-	GLGIAI_0142		DNA primase / DNA helicase	SO:0001217, UniRef:UniRef50_A0AAE9KSD9
+contig_1	cds	93990	94193	-	GLGIAI_0143		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MRH1
+contig_1	cds	94341	94517	-	GLGIAI_0144		Major capsid protein	SO:0001217, UniRef:UniRef50_A0A0B7MR33
+contig_1	cds	94514	94891	-	GLGIAI_0145		Dc1	SO:0001217, UniRef:UniRef50_Q76XK6
+contig_1	cds	94922	95557	-	GLGIAI_0146		Dc2	SO:0001217, UniRef:UniRef50_A0A0B7MKN8
+contig_1	cds	95608	97020	-	GLGIAI_0147		DnaB-like replicative helicase	SO:0001217, UniRef:UniRef50_P04530
+contig_1	cds	97017	97334	-	GLGIAI_0148		Head vertex assembly chaperone	SO:0001217, UniRef:UniRef50_A0A482GP77
+contig_1	cds	97390	98460	-	GLGIAI_0149	recA	Protein RecA	SO:0001217, UniRef:UniRef50_A0A1Z9GAB4
+contig_1	cds	98472	98660	-	GLGIAI_0150		Phage protein	SO:0001217, UniRef:UniRef50_Q7Y3T8
+contig_1	cds	98722	101400	-	GLGIAI_0151		DNA-directed DNA polymerase	SO:0001217, UniRef:UniRef50_Q38087
+contig_1	cds	101483	101845	-	GLGIAI_0152		Translation repressor protein	SO:0001217, UniRef:UniRef50_Q6J2P8
+contig_1	cds	101847	102425	-	GLGIAI_0153		Sliding-clamp-loader small subunit	SO:0001217, UniRef:UniRef50_Q76XJ9
+contig_1	cds	102425	103399	-	GLGIAI_0154		Sliding-clamp-loader large subunit	SO:0001217, UniRef:UniRef50_P04526
+contig_1	cds	103465	104151	-	GLGIAI_0155		Sliding clamp	SO:0001217, UniRef:UniRef50_Q76XJ7
+contig_1	cds	104181	104558	-	GLGIAI_0156		Phage protein	SO:0001217, UniRef:UniRef50_A0A6B9WYC3
+contig_1	cds	104563	104940	-	GLGIAI_0157		RNA polymerase binding protein	SO:0001217, UniRef:UniRef50_A0A482GBS8
+contig_1	cds	105188	106870	-	GLGIAI_0158		Exonuclease subunit 2	SO:0001217, UniRef:UniRef50_A0AAF1KQL3
+contig_1	cds	106851	107114	-	GLGIAI_0159		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3T6
+contig_1	cds	107111	107683	-	GLGIAI_0160		DUF1801 domain-containing protein	SO:0001217, UniRef:UniRef50_A0A7D7F917
+contig_1	cds	107658	107975	-	GLGIAI_0161		Large polyvalent protein associated domain-containing protein	SO:0001217, UniRef:UniRef50_A0A482GEQ0
+contig_1	cds	107972	108223	-	GLGIAI_0162		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3T3
+contig_1	cds	108277	109302	-	GLGIAI_0163		Exonuclease subunit 1	SO:0001217, UniRef:UniRef50_P04521
+contig_1	cds	109393	109680	-	GLGIAI_0164		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y470
+contig_1	cds	109682	109915	-	GLGIAI_0165		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y469
+contig_1	cds	109899	110432	-	GLGIAI_0166		RNA polymerase sigma-like factor	SO:0001217, UniRef:UniRef50_P04524
+contig_1	cds	110452	111942	-	GLGIAI_0167		DEAD/DEAH box helicase domain-containing protein	SO:0001217, UniRef:UniRef50_Q7Y3T1
+contig_1	cds	111942	112229	-	GLGIAI_0168		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y467
+contig_1	cds	112251	112409	-	GLGIAI_0169		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3T0
+contig_1	cds	112399	112668	-	GLGIAI_0170		Glutaredoxin	SO:0001217, UniRef:UniRef50_A0AA51XKM1
+contig_1	cds	112665	113147	-	GLGIAI_0171		Phage protein	SO:0001217, UniRef:UniRef50_A0A6B9LW71
+contig_1	cds	113149	113973	-	GLGIAI_0172		Tail fibers protein	SO:0001217, UniRef:UniRef50_A0A9P0YE29
+contig_1	cds	113986	114471	-	GLGIAI_0173		Phage protein	SO:0001217, UniRef:UniRef50_C4MYL9
+contig_1	cds	114476	115003	-	GLGIAI_0174		Tail fiber protein	SO:0001217, UniRef:UniRef50_A0A2K9VNS1
+contig_1	cds	115014	115517	-	GLGIAI_0175		hypothetical protein	PFAM:PF13353.11
+contig_1	cds	115507	115659	-	GLGIAI_0176		Gp86	SO:0001217, UniRef:UniRef50_A0A7R8R6U0
+contig_1	cds	115735	116280	-	GLGIAI_0177		hypothetical protein	
+contig_1	cds	116298	116840	-	GLGIAI_0178		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MR74
+contig_1	cds	116946	118808	-	GLGIAI_0179		Anaerobic ribonucleoside-triphosphate reductase	SO:0001217, UniRef:UniRef50_P07071
+contig_1	cds	118854	119348	-	GLGIAI_0180		Tail fibers protein	SO:0001217, UniRef:UniRef50_A0A7S6HTL4
+contig_1	cds	119403	120581	-	GLGIAI_0181		RNA ligase	SO:0001217, UniRef:UniRef50_A7XF06
+contig_1	cds	120638	121204	-	GLGIAI_0182		Phage protein	SO:0001217, UniRef:UniRef50_A0A0B7MSL4
+contig_1	cds	121231	121491	-	GLGIAI_0183		Phage protein	SO:0001217, UniRef:UniRef50_Q7Y3S0
+contig_1	cds	121555	122028	-	GLGIAI_0184		Recombination endonuclease VII	SO:0001217, UniRef:UniRef50_A0AAF1K035
+contig_1	cds	122053	122334	-	GLGIAI_0185		Thioredoxin	SO:0001217, UniRef:UniRef50_Q7Y462
+contig_1	cds	122343	123155	-	GLGIAI_0186		DNA adenine methylase	SO:0001217, UniRef:UniRef50_P04392
+contig_1	cds	123155	123586	-	GLGIAI_0187		Phage protein	SO:0001217, UniRef:UniRef50_C4MYN5
+contig_1	cds	123597	123851	-	GLGIAI_0188		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYN6
+contig_1	cds	123883	124104	-	GLGIAI_0189		Transcriptional regulator	SO:0001217, UniRef:UniRef50_A0A482MKM1
+contig_1	cds	124097	124390	-	GLGIAI_0190		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3R6
+contig_1	cds	124405	124713	-	GLGIAI_0191		WG repeat-containing protein	SO:0001217, UniRef:UniRef50_Q7Y3R5
+contig_1	cds	124785	125093	-	GLGIAI_0192		TMhelix containing protein	SO:0001217, UniRef:UniRef50_A0A482GC74
+contig_1	cds	125104	125382	-	GLGIAI_0193		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3R3
+contig_1	cds	125470	125724	-	GLGIAI_0194		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3R2
+contig_1	cds	125690	126028	-	GLGIAI_0195		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MRP0
+contig_1	cds	126028	126294	-	GLGIAI_0196		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MSN1
+contig_1	cds	126291	126539	-	GLGIAI_0197		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MJ50
+contig_1	cds	126536	126970	-	GLGIAI_0198		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MKW0
+contig_1	cds	126981	127199	-	GLGIAI_0199		Phage protein	SO:0001217, UniRef:UniRef50_A0A6B9LP29
+contig_1	cds	127210	127407	-	GLGIAI_0200		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYP7
+contig_1	cds	127418	127708	-	GLGIAI_0201		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYP8
+contig_1	cds	127810	128589	-	GLGIAI_0202		Receptor-recognizing protein gp38	SO:0001217, UniRef:UniRef50_M1EBB2
+contig_1	cds	128647	128868	-	GLGIAI_0203		hypothetical protein	SO:0001217, UniRef:UniRef50_Q76ZH2
+contig_1	cds	128958	129242	-	GLGIAI_0204		Peptidase S24/S26A/S26B/S26C domain-containing protein	SO:0001217, UniRef:UniRef50_A0A482GKW6
+contig_1	cds	129239	129589	-	GLGIAI_0205		hypothetical protein	SO:0001217, UniRef:UniRef50_Q76ZH4
+contig_1	cds	129586	129924	-	GLGIAI_0206		hypothetical protein	SO:0001217, UniRef:UniRef50_A7XF34
+contig_1	cds	129914	130123	-	GLGIAI_0207		hypothetical protein	SO:0001217, UniRef:UniRef50_A0AAF1K123
+contig_1	cds	130452	130850	-	GLGIAI_0208		Ferritin/DPS protein domain-containing protein	SO:0001217, UniRef:UniRef50_A0A482GPC6
+contig_1	cds	130837	131139	-	GLGIAI_0209		RI lysis inhibition regulator	SO:0001217, UniRef:UniRef50_A0A482G9G6
+contig_1	cds	131208	131804	-	GLGIAI_0210		Thymidine kinase	SO:0001217, UniRef:UniRef50_P13300
+contig_1	cds	131804	132097	-	GLGIAI_0211		TMhelix containing protein	SO:0001217, UniRef:UniRef50_A0A482GFZ3
+contig_1	cds	132090	132308	-	GLGIAI_0212		DUF2256 domain-containing protein	SO:0001217, UniRef:UniRef50_A0A1B0VV55
+contig_1	cds	132305	132499	-	GLGIAI_0213		hypothetical protein	PFAM:PF23903.1
+contig_1	cds	132489	132944	-	GLGIAI_0214		Macro domain-containing protein	SO:0001217, UniRef:UniRef50_Q7Y461
+contig_1	cds	132960	133319	-	GLGIAI_0215		Valyl-tRNA synthetase modifier	SO:0001217, UniRef:UniRef50_A0A482GB26
+contig_1	cds	133327	133917	-	GLGIAI_0216		Transglycosylase SLT domain-containing protein	SO:0001217, UniRef:UniRef50_Q76XJ0
+contig_1	cds	134003	134425	-	GLGIAI_0217		Site-specific RNA endonuclease	SO:0001217, UniRef:UniRef50_A0AAE9P772
+contig_1	cds	134430	134765	-	GLGIAI_0218		GpregB-1	SO:0001217, UniRef:UniRef50_Q7Y3Q8
+contig_1	cds	134826	135071	-	GLGIAI_0219		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYR6
+contig_1	cds	135068	135262	-	GLGIAI_0220		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7MRS5
+contig_1	cds	135284	135982	-	GLGIAI_0221		Nucleotidyltransferase	SO:0001217, UniRef:UniRef50_A0A5B9MUU7
+contig_1	cds	136069	136485	-	GLGIAI_0222		Autonomous glycyl radical cofactor	SO:0001217, UniRef:UniRef50_Q8ZD84
+contig_1	cds	136496	136621	-	GLGIAI_0223		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3Q5
+contig_1	cds	136621	137106	-	GLGIAI_0224		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y458
+contig_1	cds	137169	137558	-	GLGIAI_0225		Peptidase M15C domain-containing protein	SO:0001217, UniRef:UniRef50_D3VE22
+contig_1	cds	137587	137778	-	GLGIAI_0226		Lipoprotein	SO:0001217, UniRef:UniRef50_A0A220NTE1
+contig_1	cds	137780	137995	-	GLGIAI_0227		TMhelix containing protein	SO:0001217, UniRef:UniRef50_Q7Y3Q2
+contig_1	cds	137998	138177	-	GLGIAI_0228		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3Q1
+contig_1	cds	138174	138362	-	GLGIAI_0229		NADH dehydrogenase subunit 4L	SO:0001217, UniRef:UniRef50_Q7Y3Q0
+contig_1	cds	138425	138583	-	GLGIAI_0230		Periplasmic protein	SO:0001217, UniRef:UniRef50_A0A6B9X488
+contig_1	cds	138586	138900	-	GLGIAI_0231		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYT0
+contig_1	cds	138857	139177	-	GLGIAI_0232		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3P7
+contig_1	cds	139196	139396	-	GLGIAI_0233		hypothetical protein	
+contig_1	cds	139398	139580	-	GLGIAI_0234		TMhelix containing protein	SO:0001217, UniRef:UniRef50_A0A6B9WQK6
+contig_1	cds	139589	139915	-	GLGIAI_0235		Large polyvalent protein associated domain-containing protein	SO:0001217, UniRef:UniRef50_C4MYT4
+contig_1	cds	139995	140183	-	GLGIAI_0236		Phage protein	SO:0001217, UniRef:UniRef50_Q7Y457
+contig_1	cds	140206	140394	-	GLGIAI_0237		hypothetical protein	SO:0001217, UniRef:UniRef50_C4MYT6
+contig_1	cds	140404	140631	-	GLGIAI_0238		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3P1
+contig_1	cds	140698	140883	-	GLGIAI_0239		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0A7NV33
+contig_1	cds	141160	141378	-	GLGIAI_0240		TMhelix containing protein	SO:0001217, UniRef:UniRef50_Q7Y3N9
+contig_1	cds	141375	141557	-	GLGIAI_0241		Holin	SO:0001217, UniRef:UniRef50_A0A5B9MV44
+contig_1	cds	141775	141885	-	GLGIAI_0242		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3N6
+contig_1	cds	141882	142079	-	GLGIAI_0243		TMhelix containing protein	SO:0001217, UniRef:UniRef50_C4MYU3
+contig_1	cds	142079	142273	-	GLGIAI_0244		Discriminator of mRNA degradation	SO:0001217, UniRef:UniRef50_A0A482GEW0
+contig_1	cds	142283	142441	-	GLGIAI_0245		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3N4
+contig_1	cds	142509	142886	-	GLGIAI_0246		hypothetical protein	SO:0001217, UniRef:UniRef50_Q7Y3N3
+contig_1	cds	143001	143465	-	GLGIAI_0247		Anti-CBASS protein Acb1	SO:0001217, UniRef:UniRef50_Q7Y455
+contig_1	cds	143468	143728	-	GLGIAI_0248		hypothetical protein	
+contig_1	cds	143761	144417	-	GLGIAI_0249		Deoxynucleotide monophosphate kinase	SO:0001217, UniRef:UniRef50_A0AAF1K9P0
+contig_1	cds	144433	145023	-	GLGIAI_0250		Tail completion and sheath stabilizer protein	SO:0001217, UniRef:UniRef50_Q7Y425
+contig_1	cds	145213	145467	+	GLGIAI_0251	flgN	Flagellar protein FlgN	SO:0001217, UniRef:UniRef50_A0A482MKM0
+contig_1	cds	145498	146319	-	GLGIAI_0252		Terminal DNA protecting protein	SO:0001217, UniRef:UniRef50_P15076
+contig_1	cds	146446	147468	+	GLGIAI_0253		hypothetical protein	
+contig_1	cds	147457	147930	-	GLGIAI_0254		hypothetical protein	PFAM:PF08722.17
+contig_1	cds	147986	148540	+	GLGIAI_0255		Baseplate wedge protein gp53	SO:0001217, UniRef:UniRef50_P16011
+contig_1	cds	148552	150351	+	GLGIAI_0256		hypothetical protein	PFAM:PF00959.24, PFAM:PF06714.17, PFAM:PF06715.18, PFAM:PF22178.3
+contig_1	cds	150360	150926	+	GLGIAI_0257		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A220NTH6
+contig_1	cds	150926	151219	+	GLGIAI_0258		Baseplate puncturing device gp5-4	SO:0001217, UniRef:UniRef50_P39234
+contig_1	cds	151216	153120	+	GLGIAI_0259		Baseplate wedge protein gp6	SO:0001217, UniRef:UniRef50_P19060
+contig_1	cds	153117	156203	+	GLGIAI_0260		Baseplate wedge protein gp7	SO:0001217, UniRef:UniRef50_P19061
+contig_1	cds	156196	157191	+	GLGIAI_0261		Baseplate wedge protein gp8	SO:0001217, UniRef:UniRef50_P19062
+contig_1	cds	157301	157558	+	GLGIAI_0262		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A0B7ML49
+contig_1	cds	157546	157875	+	GLGIAI_0263		putative homing endonuclease	SO:0001217, UniRef:UniRef50_A0A6B9X4M8
+contig_1	cds	157875	158714	+	GLGIAI_0264		Methyltransferase small domain-containing protein	SO:0001217, UniRef:UniRef50_A0A0B7MSW0
+contig_1	cds	158790	159644	+	GLGIAI_0265		Baseplate wedge tail fiber connector	SO:0001217, UniRef:UniRef50_Q76XH9
+contig_1	cds	159641	161443	+	GLGIAI_0266		Baseplate wedge protein gp10	SO:0001217, UniRef:UniRef50_A0AA94YDH0
+contig_1	cds	161445	162089	+	GLGIAI_0267		Gp11 baseplate wedge subunit and tail pin	SO:0001217, UniRef:UniRef50_Q7Y450
+contig_1	cds	162101	163501	+	GLGIAI_0268		Phage tail collar domain-containing protein	SO:0001217, UniRef:UniRef50_A0AAX4R1M5
+contig_1	cds	163501	164673	+	GLGIAI_0269		(3' truncated) hypothetical protein	
