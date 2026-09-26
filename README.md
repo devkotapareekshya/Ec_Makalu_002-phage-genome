@@ -15,7 +15,7 @@ See [`report/Ec_Makalu_002_mini_report.docx`](report/Ec_Makalu_002_mini_report.d
 ## Key findings
 
 ### 1. Long tail fiber gene (host-range determinant)
-The long tail fiber gene was fully resolved at its correct coordinates and shows 99.92% identity to the reference (1246/1246 aa aligned, single conservative substitution at position 245).
+The long tail fiber gene was fully resolved at its correct coordinates and shows 99.92% identity to the reference (1246/1246 aa aligned, single conservative substitution at position 251).
 
 ### 2. Whole-genome comparative annotation QC
 Reciprocal BLASTp against the reference genome's annotated proteome (274 CDS) found 268/269 assembly genes and 268/274 reference genes with confident reciprocal hits. The 7 remaining apparent discrepancies were each resolved by nucleotide-level BLAST: **all 7 showed 100% identity, full-length, zero mismatches** against the counterpart genome. Conclusion: the underlying DNA is fully conserved; the discrepancies are gene-calling threshold artifacts, not true gaps or novel genes.
