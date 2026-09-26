@@ -30,19 +30,17 @@ A phylogenetic analysis of the terminase large subunit gene across 16 *Krischvir
 This finding is presented as a well-supported sequence-based hypothesis; formal confirmation (e.g., against InBase or a dedicated intein-splicing domain profile) was not completed due to intermittent NCBI service availability, and is noted as a next step.
 
 ### 4. GLGIAI_0263 — conservatively labeled
- true gaps or novel genes.
-
-### 3. Putative mobile intein in the terminase large subunit
-A phylogenetic analysis of the terminase large subunit gene across 16 *Krischvirus* and related genomes (MAFFT alignment + IQ-TREE, ultrafast bootstrap) showed Ec_Makalu_002 clustering with Ec_Makalu_003, ECD7, and AV108 in a well-supported subclade (bootstrap ≥ 89) distinguished by a ~330 aa insertion absent from the rest of the genus. This insertion:
-- Begins with Ala, matching the canonical intein N-terminal splice-junction residue
-- Ends in the conserved His-Asn dipeptide (Block G), the canonical intein C-terminal splicing motif
-- Contains a histidine cluster in its central third, consistent with an embedded HNH-family homing endonuclease domain
-- Shares its insertion site (221/222 overlapping alignment columns) with a shorter, independent 222 aa insertion found in the more distantly related phage suisiam, suggesting this is a recurrent intein insertion hotspot in the *Krischvirus* terminase large subunit gene
-
-This finding is presented as a well-supported sequence-based hypothesis; formal confirmation (e.g., against InBase or a dedicated intein-splicing domain profile) was not completed due to intermittent NCBI service availability, and is noted as a next step.
-
-### 4. GLGIAI_0263 — conservatively labeled
 A 109 aa CDS with only distant homology to an uncharacterized ECD7 protein and no confident Pfam-A domain hit is labeled `putative homing endonuclease` throughout the annotation, consistent with the original NCBI submission's own qualified call for the same locus.
+
+## Genome organization and functional annotation
+
+The final circular genome is 164,673 bp and contains 269 predicted CDSs. Broad functional classification of the Bakta annotations identified 103 CDSs (38.29%) as unknown or hypothetical, 97 (36.06%) as other characterized proteins, 25 (9.29%) as tail/adsorption proteins, 14 (5.20%) as DNA replication/recombination proteins, 10 (3.72%) as head/capsid proteins, 9 (3.35%) as nuclease/mobility proteins, 5 (1.86%) as host-lysis proteins, 3 (1.12%) as transcription-associated proteins, 2 (0.74%) as regulatory proteins, and 1 (0.37%) as a DNA-packaging protein. These represent broad predicted functional categories based on annotation terminology rather than experimentally validated functions.
+
+### Circular genome map
+
+![Ec_Makalu_002 circular genome map](genome_map_v4.png)
+
+**Figure 1.** Circular genome map of *Escherichia* phage Ec_Makalu_002 (164,673 bp). From outermost to innermost, the map shows key annotated loci, forward- and reverse-strand coding sequences (CDSs) color-coded according to predicted functional category, GC-content deviation relative to the genomic mean, and GC skew. The highlighted loci are the terminase large subunit (GLGIAI_0007), long tail fiber protein (GLGIAI_0099), and putative homing endonuclease (GLGIAI_0263). GC-content and GC-skew tracks were calculated using a 2-kb sliding window with a 1-kb step.
 
 ## Repository structure
 
