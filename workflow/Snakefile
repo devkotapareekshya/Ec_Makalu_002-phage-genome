@@ -1,0 +1,392 @@
+"""
+Snakemake pipeline: Ec_Makalu_002 phage genome assembly, QC, annotation,
+and comparative / phylogenetic analysis.
+
+Reproduces the workflow described in the project report:
+  1. Fetch + trim reads
+  2. Assemble with SPAdes
+  3. Circularize + reorient to reference
+  4. Annotate with Bakta
+  5. QC: full-library read mapping, depth uniformity (chimera check),
+     duplicate marking, terminal-repeat check (circularization artifact check),
+     CheckV completeness/contamination/provirus assessment
+  6. Comparative annotation QC: reciprocal BLASTp vs. reference proteome
+  7. Terminase large subunit phylogenetics (MAFFT + IQ-TREE)
+  8. Circular genome map figure
+
+Usage:
+    snakemake --cores 12 --use-conda -p
+
+Before running:
+    - Edit config.yaml
+    - Download the Bakta and CheckV databases (see README below)
+    - Populate phylogenetics/phylo_genomes/ with related taxa FASTA files
+"""
+
+configfile: "config.yaml"
+
+SAMPLE = config["sample_name"]
+SRA = config["sra_accession"]
+REF = config["reference_accession"]
+THREADS = config["threads"]
+RESULTS = config["results_dir"]
+
+# -----------------------------------------------------------------------------
+# Top-level target
+# -----------------------------------------------------------------------------
+rule all:
+    input:
+        f"{RESULTS}/annotation/{SAMPLE}.done",
+        f"{RESULTS}/qc/depth_summary.tsv",
+        f"{RESULTS}/qc/markdup_stats.txt",
+        f"{RESULTS}/qc/terminal_repeat_check.tsv",
+        f"{RESULTS}/qc/checkv/quality_summary.tsv",
+        f"{RESULTS}/comparative/reciprocal_best_hits.tsv",
+        f"{RESULTS}/phylogenetics/terL_tree.treefile",
+        f"{RESULTS}/figures/genome_map.png",
+
+
+# -----------------------------------------------------------------------------
+# 1. Fetch raw reads from SRA (skip if you already have local fastq files --
+#    just point config["raw_r1"/"raw_r2"] at them and remove this rule from
+#    the DAG by providing those files directly)
+# -----------------------------------------------------------------------------
+rule fetch_sra:
+    output:
+        r1="data/reads/{sra}_1.fastq",
+        r2="data/reads/{sra}_2.fastq",
+    params:
+        sra="{sra}",
+        outdir="data/reads",
+    threads: THREADS
+    conda: "envs/sra_tools.yaml"
+    shell:
+        """
+        prefetch {params.sra} -O data/sra_cache
+        fasterq-dump data/sra_cache/{params.sra}/{params.sra}.sra \
+            -O {params.outdir} -e {threads} --split-files
+        """
+
+
+# -----------------------------------------------------------------------------
+# 2. Quality trim
+# -----------------------------------------------------------------------------
+rule trim_reads:
+    input:
+        r1=f"data/reads/{SRA}_1.fastq",
+        r2=f"data/reads/{SRA}_2.fastq",
+    output:
+        r1=f"trimmed/{SAMPLE}_R1.trimmed.fastq.gz",
+        r2=f"trimmed/{SAMPLE}_R2.trimmed.fastq.gz",
+        html=f"trimmed/{SAMPLE}_fastp.html",
+        json=f"trimmed/{SAMPLE}_fastp.json",
+    threads: THREADS
+    conda: "envs/qc_tools.yaml"
+    shell:
+        """
+        fastp -i {input.r1} -I {input.r2} \
+              -o {output.r1} -O {output.r2} \
+              -h {output.html} -j {output.json} \
+              -w {threads}
+        """
+
+
+# -----------------------------------------------------------------------------
+# 3. Assembly with SPAdes
+# -----------------------------------------------------------------------------
+rule spades_assembly:
+    input:
+        r1=rules.trim_reads.output.r1,
+        r2=rules.trim_reads.output.r2,
+    output:
+        contigs=f"assembly_spades/contigs.fasta",
+    params:
+        outdir="assembly_spades",
+        kmers=config["spades_kmers"],
+        mode=config["spades_mode"],
+    threads: THREADS
+    conda: "envs/assembly.yaml"
+    shell:
+        """
+        spades.py -1 {input.r1} -2 {input.r2} \
+            -k {params.kmers} {params.mode} \
+            -o {params.outdir} -t {threads}
+        """
+
+
+# -----------------------------------------------------------------------------
+# 4. Circularize + reorient to match reference start coordinate
+#    NOTE: circularization of phage genomes is not fully generic -- the
+#    approach below (a) pulls the longest SPAdes contig, (b) checks for
+#    terminal overlap indicating a redundant/circular assembly graph closure,
+#    and (c) reorients to the reference start via a self-BLAST anchor.
+#    Inspect scripts/circularize_and_reorient.py and adjust for your specific
+#    contig topology if the automated join point looks wrong.
+# -----------------------------------------------------------------------------
+rule download_reference:
+    output:
+        fasta=f"resources/reference/{REF}.fasta",
+        gb=f"resources/reference/{REF}.gb",
+    conda: "envs/sra_tools.yaml"
+    shell:
+        """
+        mkdir -p resources/reference
+        efetch -db nuccore -id {REF} -format fasta > {output.fasta}
+        efetch -db nuccore -id {REF} -format gb > {output.gb}
+        """
+
+rule circularize_and_reorient:
+    input:
+        contigs=rules.spades_assembly.output.contigs,
+        ref=rules.download_reference.output.fasta,
+    output:
+        final=f"{RESULTS}/assembly/{SAMPLE}_final_circular.fasta",
+    conda: "envs/assembly.yaml"
+    script:
+        "scripts/circularize_and_reorient.py"
+
+
+# -----------------------------------------------------------------------------
+# 5. Annotation with Bakta
+# -----------------------------------------------------------------------------
+rule bakta_annotate:
+    input:
+        genome=rules.circularize_and_reorient.output.final,
+    output:
+        done=touch(f"{RESULTS}/annotation/{SAMPLE}.done"),
+        faa=f"{RESULTS}/annotation/{SAMPLE}.faa",
+        gff3=f"{RESULTS}/annotation/{SAMPLE}.gff3",
+        json=f"{RESULTS}/annotation/{SAMPLE}.json",
+    params:
+        outdir=f"{RESULTS}/annotation",
+        db=config["bakta_db"],
+        prefix=SAMPLE,
+    threads: THREADS
+    conda: "envs/bakta.yaml"
+    shell:
+        """
+        bakta --db {params.db} --prefix {params.prefix} \
+              --output {params.outdir} --threads {threads} \
+              --force {input.genome}
+        """
+
+
+# -----------------------------------------------------------------------------
+# 6a. QC -- map the COMPLETE read set back to the finished genome
+#     (not the trimmed/downsampled assembly-input set) to check for
+#     chimeric assembly signal and get a true depth estimate.
+# -----------------------------------------------------------------------------
+rule map_reads_full:
+    input:
+        genome=rules.circularize_and_reorient.output.final,
+        r1=f"data/reads/{SRA}_1.fastq",
+        r2=f"data/reads/{SRA}_2.fastq",
+    output:
+        bam=f"{RESULTS}/qc/reads_vs_final.bam",
+        bai=f"{RESULTS}/qc/reads_vs_final.bam.bai",
+    threads: THREADS
+    conda: "envs/qc_tools.yaml"
+    shell:
+        """
+        bwa index {input.genome}
+        bwa mem -t {threads} {input.genome} {input.r1} {input.r2} \
+            | samtools sort -@ {threads} -o {output.bam}
+        samtools index {output.bam}
+        """
+
+rule depth_qc:
+    input:
+        bam=rules.map_reads_full.output.bam,
+    output:
+        raw=f"{RESULTS}/qc/depth_full.tsv",
+    conda: "envs/qc_tools.yaml"
+    shell:
+        "samtools depth -a {input.bam} > {output.raw}"
+
+rule summarize_depth:
+    input:
+        raw=rules.depth_qc.output.raw,
+    output:
+        summary=f"{RESULTS}/qc/depth_summary.tsv",
+        flagged=f"{RESULTS}/qc/depth_flagged_windows.tsv",
+    params:
+        window=1000,
+    conda: "envs/qc_tools.yaml"
+    script:
+        "scripts/summarize_depth.py"
+
+rule markdup_qc:
+    input:
+        bam=rules.map_reads_full.output.bam,
+    output:
+        stats=f"{RESULTS}/qc/markdup_stats.txt",
+        flagstat=f"{RESULTS}/qc/flagstat.txt",
+    conda: "envs/qc_tools.yaml"
+    shell:
+        """
+        samtools flagstat {input.bam} > {output.flagstat}
+        samtools sort -n {input.bam} -o {RESULTS}/qc/namesorted.bam
+        samtools fixmate -m {RESULTS}/qc/namesorted.bam {RESULTS}/qc/fixmate.bam
+        samtools sort {RESULTS}/qc/fixmate.bam -o {RESULTS}/qc/sorted_for_markdup.bam
+        samtools markdup -s {RESULTS}/qc/sorted_for_markdup.bam \
+            {RESULTS}/qc/markdup.bam 2> {output.stats}
+        rm -f {RESULTS}/qc/namesorted.bam {RESULTS}/qc/fixmate.bam \
+              {RESULTS}/qc/sorted_for_markdup.bam {RESULTS}/qc/markdup.bam
+        """
+
+
+# -----------------------------------------------------------------------------
+# 6b. QC -- terminal-repeat check (rules out an artificial circularization join)
+# -----------------------------------------------------------------------------
+rule terminal_repeat_check:
+    input:
+        genome=rules.circularize_and_reorient.output.final,
+    output:
+        tsv=f"{RESULTS}/qc/terminal_repeat_check.tsv",
+    params:
+        window=500,
+    conda: "envs/assembly.yaml"
+    shell:
+        """
+        samtools faidx {input.genome}
+        CONTIG=$(cut -f1 {input.genome}.fai | head -1)
+        LEN=$(cut -f2 {input.genome}.fai | head -1)
+        START_POS=$((LEN - {params.window} + 1))
+        samtools faidx {input.genome} "${{CONTIG}}:1-{params.window}" > {RESULTS}/qc/start_win.fasta
+        samtools faidx {input.genome} "${{CONTIG}}:${{START_POS}}-${{LEN}}" > {RESULTS}/qc/end_win.fasta
+        makeblastdb -in {RESULTS}/qc/end_win.fasta -dbtype nucl -out {RESULTS}/qc/end_win_db
+        blastn -query {RESULTS}/qc/start_win.fasta -db {RESULTS}/qc/end_win_db \
+            -outfmt "6 qstart qend sstart send length pident evalue" \
+            > {output.tsv} || touch {output.tsv}
+        """
+
+
+# -----------------------------------------------------------------------------
+# 6c. QC -- CheckV completeness / contamination / provirus assessment
+# -----------------------------------------------------------------------------
+rule checkv_run:
+    input:
+        genome=rules.circularize_and_reorient.output.final,
+    output:
+        summary=f"{RESULTS}/qc/checkv/quality_summary.tsv",
+    params:
+        outdir=f"{RESULTS}/qc/checkv",
+        db=config["checkv_db"],
+    threads: THREADS
+    conda: "envs/checkv.yaml"
+    shell:
+        """
+        checkv end_to_end {input.genome} {params.outdir} \
+            -d {params.db} -t {threads}
+        """
+
+
+# -----------------------------------------------------------------------------
+# 7. Comparative annotation QC -- reciprocal BLASTp vs. reference proteome
+# -----------------------------------------------------------------------------
+rule extract_reference_proteins:
+    input:
+        gb=rules.download_reference.output.gb,
+    output:
+        faa=f"resources/reference/{REF}_proteins.faa",
+    conda: "envs/assembly.yaml"
+    script:
+        "scripts/extract_gb_proteins.py"
+
+rule reciprocal_blastp:
+    input:
+        query=rules.bakta_annotate.output.faa,
+        ref=rules.extract_reference_proteins.output.faa,
+    output:
+        fwd=f"{RESULTS}/comparative/query_vs_ref.tsv",
+        rev=f"{RESULTS}/comparative/ref_vs_query.tsv",
+        best=f"{RESULTS}/comparative/reciprocal_best_hits.tsv",
+    threads: THREADS
+    conda: "envs/assembly.yaml"
+    shell:
+        """
+        mkdir -p {RESULTS}/comparative
+        makeblastdb -in {input.ref} -dbtype prot -out {RESULTS}/comparative/ref_db
+        makeblastdb -in {input.query} -dbtype prot -out {RESULTS}/comparative/query_db
+
+        blastp -query {input.query} -db {RESULTS}/comparative/ref_db \
+            -evalue 1e-5 -max_target_seqs 1 -outfmt 6 -num_threads {threads} \
+            > {output.fwd}
+        blastp -query {input.ref} -db {RESULTS}/comparative/query_db \
+            -evalue 1e-5 -max_target_seqs 1 -outfmt 6 -num_threads {threads} \
+            > {output.rev}
+
+        python3 scripts/reciprocal_best_hits.py {output.fwd} {output.rev} {output.best}
+        """
+
+
+# -----------------------------------------------------------------------------
+# 8. Terminase large subunit phylogenetics
+# -----------------------------------------------------------------------------
+rule extract_terl:
+    input:
+        json=rules.bakta_annotate.output.json,
+    output:
+        faa=f"{RESULTS}/phylogenetics/terL_query.faa",
+    params:
+        pfam_domains=config["terl_pfam_domains"],
+    conda: "envs/assembly.yaml"
+    script:
+        "scripts/extract_terl.py"
+
+rule tblastn_related_genomes:
+    input:
+        query=rules.extract_terl.output.faa,
+        genomes_dir=config["phylo_genomes_dir"],
+    output:
+        hits=f"{RESULTS}/phylogenetics/terL_homologs.faa",
+    threads: THREADS
+    conda: "envs/assembly.yaml"
+    script:
+        "scripts/tblastn_related_genomes.py"
+
+rule mafft_align:
+    input:
+        seqs=rules.tblastn_related_genomes.output.hits,
+        query=rules.extract_terl.output.faa,
+    output:
+        aln=f"{RESULTS}/phylogenetics/terL_aligned.fasta",
+    threads: THREADS
+    conda: "envs/phylo.yaml"
+    shell:
+        """
+        cat {input.query} {input.seqs} > {RESULTS}/phylogenetics/terL_combined.faa
+        mafft --auto --thread {threads} {RESULTS}/phylogenetics/terL_combined.faa \
+            > {output.aln}
+        """
+
+rule iqtree_build:
+    input:
+        aln=rules.mafft_align.output.aln,
+    output:
+        tree=f"{RESULTS}/phylogenetics/terL_tree.treefile",
+    params:
+        prefix=f"{RESULTS}/phylogenetics/terL_tree",
+    threads: THREADS
+    conda: "envs/phylo.yaml"
+    shell:
+        """
+        iqtree2 -s {input.aln} -m MFP -bb 1000 -nt {threads} \
+            -pre {params.prefix} -redo
+        """
+
+
+# -----------------------------------------------------------------------------
+# 9. Circular genome map figure
+# -----------------------------------------------------------------------------
+rule genome_map:
+    input:
+        gff3=rules.bakta_annotate.output.gff3,
+    output:
+        png=f"{RESULTS}/figures/genome_map.png",
+    params:
+        annotation_dir=f"{RESULTS}/annotation",
+        sample=SAMPLE,
+    conda: "envs/plotting.yaml"
+    script:
+        "scripts/genome_map.py"

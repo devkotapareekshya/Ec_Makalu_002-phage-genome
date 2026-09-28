@@ -1,0 +1,46 @@
+# =============================================================================
+# Config for Ec_Makalu_002 phage genome assembly, QC, annotation, and
+# comparative/phylogenetic analysis pipeline.
+# Edit the values below to match your environment before running.
+# =============================================================================
+
+# Sample / accession info
+sample_name: "Ec_Makalu_002"
+sra_accession: "SRR10671636"          # NCBI SRA run used for assembly + QC mapping
+
+# Reference genome for comparative annotation QC (closest public relative)
+reference_accession: "MN709127.1"
+
+# Raw reads (leave as-is to have the pipeline fetch them from SRA;
+# or point directly at existing local fastq files to skip the download step)
+raw_r1: "data/reads/SRR10671636_1.fastq"
+raw_r2: "data/reads/SRR10671636_2.fastq"
+
+# Assembly parameters
+spades_kmers: "21,33,55,77"
+spades_mode: "--careful"
+
+# Expected/known final genome length (bp) -- used only for sanity-check reporting,
+# not enforced. Set to the actual value once you have it from your own assembly.
+expected_genome_length: 164673
+
+# Number of threads to use for multi-threaded steps
+threads: 12
+
+# Bakta database path (download separately: bakta_db download)
+bakta_db: "/home/lenovo/db-light"
+
+# CheckV database path (download separately: checkv download_database)
+checkv_db: "/home/lenovo/Ec_Makalu_002/checkv-db/checkv-db-v1.5"
+
+# Phylogenetics: related genomes for terminase large subunit tree
+# (fasta files of related Krischvirus/Straboviridae genomes, one per taxon)
+phylo_genomes_dir: "phylogenetics/phylo_genomes"
+
+# Pfam domains used to identify the terminase large subunit
+terl_pfam_domains:
+  - "PF14528"
+  - "PF17289"
+
+# Output / results directories
+results_dir: "results"

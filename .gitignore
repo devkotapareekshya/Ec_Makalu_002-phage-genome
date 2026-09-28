@@ -3,3 +3,13 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Snakemake pipeline outputs and inputs (large / regenerable)
+workflow/results/
+workflow/data/
+workflow/assembly_spades/
+workflow/assembly_input/
+workflow/trimmed/
+workflow/resources/
+workflow/.snakemake/
+workflow/phylogenetics/phylo_genomes/*.fasta

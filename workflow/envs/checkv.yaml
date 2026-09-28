@@ -1,0 +1,6 @@
+name: checkv
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - checkv=1.1.*

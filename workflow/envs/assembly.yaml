@@ -1,0 +1,9 @@
+name: assembly
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - spades=3.15.*
+  - blast=2.13.*
+  - samtools=1.13
+  - biopython=1.79
